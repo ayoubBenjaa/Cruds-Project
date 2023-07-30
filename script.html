@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/bootstrap.css">
+    <style>
+        #tbody{
+            cursor: pointer;
+        }
+        #total{
+            background-color: #333;
+            padding: 5px;
+        }
+        #total::before{
+            content: 'TOTAL : ';
+            
+        }
+        input{
+            border: none;
+            border-radius: 3px;
+        }
+        .container{
+            background-color: #222;
+        }
+        #deletAll{
+            display: none;
+        }
+        #dalleteBroducts{
+            position: absolute;
+            margin: 20% 40%;
+            display: none;
+        }
+        button:hover{
+            letter-spacing: 1.3px;
+            transition: 0.5s;
+        }
+        input:focus{
+            background-color: #dcd5d5;
+            color: rgb(56, 58, 56);
+        }
+    </style>
+</head>
+
+<body class="text-center mt-3 bg-black text-light">
+    <div id="dalleteBroducts" class="bg-secondary rounded py-5 w-25">
+        <button id="cancelBTN" class="btn bg-primary mx-2" value="No">Cancel</button>
+        <button id="continueBTN" class="btn bg-danger mx-2" value="yes">Continue</button>
+    </div>
+    <h1>CRUDS PROJECT</h1>
+    <pre><h5 class="">Create  Read  Update  Delet  Search</h5></pre>
+    <div class="container py-3 rounded">
+
+<!-- ------------------------------TITLE--------------------------->
+                <div class="row py-2">
+                    <div class="col">
+                            <input id="inpTitle" class="w-100" type="text" placeholder="Title">
+                    </div>
+                </div>
+
+
+
+                <div class="row  py-2">
+
+                    <div class="col">
+                        <input id="inpPrice" class="w-100 px-2" type="number"  placeholder="price">
+                    </div>
+
+                    <div class="col">
+                        <input id="inpTaxes" class="w-100 px-2" type="number" placeholder="taxes">
+               
+                    </div>
+
+                    <div class="col">
+                        <input id="inpAds" class="w-100 px-2" type="number" placeholder="ads">
+                    </div>
+
+                    <div class="col">
+                        <input id="inpDiscount" class="w-100 px-2" type="number" placeholder="discount">
+                    </div>
+<!-- ------------------------------ToTAL--------------------------->
+                    <div class="col">
+                        <div id="total" class="rounded border-0"></div>
+                    </div>
+                </div>
+
+                <!-- ------------------------------Category--------------------------->
+                            <div class="row py-2">
+                                    <div class="col">
+                                        <input id="inpCategory" type="text" class="w-100 px-2" placeholder="categoty">
+                                    </div>
+                            </div>
+<!-- ------------------------------count--------------------------->
+                <div class="row  py-2">
+                    <div class="col">
+                        <input id="inpCount" type="number " class="w-100 px-2" placeholder="count">
+                    </div>
+            </div>
+            <!-- ------------------------------Create BTN--------------------------->
+                <div class="row  py-2">
+                    <div class="col">
+                        <button id="BtnCreate" class="btn-sm w-100 bg-primary text-light  rounded-pill border-0">CREATE</button>
+                    </div>
+            </div>
+
+                <!-- ------------------------------search--------------------------->
+                <div class="row  py-2">
+                    <div class="col">
+                        <input id="inpSearch" type="search " class="w-100 px-2" placeholder="search">
+                    </div>
+                </div>
+
+
+
+<!-- ------------------------------SEARCH BY CATEGORY BTN--------------------------->
+            <div class="row  py-2">
+                    <div class="col">
+                        <button onclick="getSerch(this.id)" id="searchByCategory" class="btn-sm w-100 bg-primary text-light  rounded-pill border-0">Search By Category</button>
+                    </div>
+<!-- ------------------------------SEARCH BY NAME BTN--------------------------->
+                    <div class="col">
+                        <button onclick="getSerch(this.id)" id="searchByTitle" class="btn-sm w-100 bg-primary text-light  rounded-pill border-0">Search By Title</button>
+                    </div>
+            </div>
+
+        <!-- ############ delete all BTN ###########-->
+            <div class="row">
+                <div class="col">
+                    <button id="deletAll" class="btn-sm w-100 bg-danger text-light  rounded-pill border-0">DELETE ALL</button>
+                </div>
+            </div>
+<!-- ------------------------------TABLE OF PRODUCTS--------------------------->
+            <table id="tableContent" class="table text-light w-100">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>TITLE</th>
+                        <th>PRICE</th>
+                        <th>TAXES</th>
+                        <th>ADS</th>
+                        <th>DISCOUNT</th>
+                        <th>TOTAL</th>
+                        <th>CATEGORY</th>
+                        <th >UPDATE</th>
+                        <th >DELETE</th>
+                </thead>
+                   
+                </tr>
+                <tbody id="tbody">
+
+                </tbody>
+             
+                
+
+            </table>
+            <script src="./bootstrap/bootstrap.js"></script>
+ <script src="script.js"></script>
+</body>
+</html>
